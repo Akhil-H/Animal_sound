@@ -3,7 +3,7 @@ for(let i=0;i<count;i++){
     document.querySelectorAll(".i")[i].addEventListener("click" ,function(){
         
         let a=this.textContent;
-        console.log(a);
+       Animation(a)
         switch(a){
             case "buffalo":
                 var audio = new Audio("buffalo.mp3");
@@ -53,4 +53,17 @@ for(let i=0;i<count;i++){
         }
         });
 }
+
+function Animation(value) {
+
+    var activeButton = document.querySelector("." + value);
+  
+    activeButton.classList.add("pressed");
+  
+    setTimeout(function() {
+      activeButton.classList.remove("pressed");
+    }, 100);
+  
+  }
+
 
